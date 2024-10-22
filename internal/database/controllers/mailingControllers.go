@@ -39,7 +39,7 @@ func (mc *MailingController) CreateMailing(ctx *gin.Context) {
 	result := mc.DB.Create(&newMailing)
 	if result.Error != nil {
 		if strings.Contains(result.Error.Error(), "duplicate") {
-			ctx.JSON(http.StatusConflict, gin.H{"status": "fail", "message": "Post with that title already exists"})
+			ctx.JSON(http.StatusConflict, gin.H{"status": "fail", "message": "Mailing with that title already exists"})
 		}
 		ctx.JSON(http.StatusBadGateway, gin.H{"status": "error", "message": result.Error.Error()})
 		return

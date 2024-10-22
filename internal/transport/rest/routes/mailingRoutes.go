@@ -10,6 +10,7 @@ type MailingRoutesController struct {
 	mailingController controllers.MailingController
 }
 
+// Constructor 
 func NewMailingController(mailingController controllers.MailingController) MailingRoutesController {
 	return MailingRoutesController{mailingController}
 }
